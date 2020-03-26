@@ -1,8 +1,10 @@
 @extends('layouts.app')
-
+@section('active1')
+active
+@endsection
 @section('contenido')
-<!-- Content Header (Page header) -->
-<div class="content-header">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -84,12 +86,8 @@
           </div>
           <!-- ./col -->
         </div>
-        <!-- /.row -->
-      
-      </div><!-- /.container-fluid -->
-      <div class="row">
-          @yield("contenedor")
-      </div>
+        <!-- /.row -->      
+      </div><!-- /.container-fluid -->      
     </section>
     <!-- /.content -->
 @endsection

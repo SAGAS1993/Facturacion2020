@@ -17,7 +17,7 @@
                with font-awesome or any other icon font library -->
                
           <li class="nav-item">
-            <a href="home" class="nav-link active">
+            <a href="home" class="nav-link @yield('active1')">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Inicio
@@ -25,8 +25,8 @@
             </a>            
           </li> 
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link ">
+          <li class="nav-item has-treeview @yield('menu-open')">
+            <a href="#" class="nav-link @yield('active2') @yield('active3') @yield('active4') @yield('active5')">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
                 Usuarios
@@ -35,21 +35,27 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link ">
+                <a href="registro_usuarios" class="nav-link @yield('active2')">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Usuarios</p>
+                  <p>Registro de usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="roles" class="nav-link @yield('active3')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="lista_usuarios" class="nav-link @yield('active4')">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Usuarios</p>
+                  <p>Lista de usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="permisos" class="nav-link @yield('active5')">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Permisos</p>
                 </a>
               </li>
             </ul>
