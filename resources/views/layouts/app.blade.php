@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -147,29 +140,26 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-
-      <li class="nav-item dropdown">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" width="40px" >
-      </li>
     
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown d-flex">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2 image" alt="User Image" width="40px">
+                    
+          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }} <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                  {{ __('Salir') }}
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+          </div>
         
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
           <i class="fas fa-th-large"></i>
@@ -198,8 +188,8 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-               <li class="nav-item">
-            <a href="./dashboard.html" class="nav-link active">
+          <li class="nav-item">
+            <a href="home" class="nav-link active">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Inicio
@@ -207,8 +197,7 @@
             </a>            
           </li> 
 
-               
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
