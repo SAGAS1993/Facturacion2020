@@ -27,6 +27,12 @@ active
     <section class="content">
       <div class="container-fluid">
         <h1>Hola roles</h1>
+        <div id="alert"></div>
+        <form id="frm_roles" action="" method="post">
+          <input id="token" type="hidden" name="_token" value="{{ csrf_token()}}">
+          <input type="text" name="nom_rol" id="nom_rol" placeholder="Nombre del rol." required>
+          <button id="roles" type="submit" class="btn_save"><i class="fas fa-save"></i> Guardar</button>
+        </form>
       </div>
     </section>
 @endsection

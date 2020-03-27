@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Roles;
 
 class RolesController extends Controller
 {
@@ -34,7 +36,12 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Roles::create($request->all());
+        if ($request->ajax()) {
+          return response()->json([
+            "mensaje" => "Rol creado correctamente"
+          ]);
+        }
     }
 
     /**
