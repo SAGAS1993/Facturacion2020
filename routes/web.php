@@ -19,3 +19,9 @@ Route::get('/', 'Auth\LoginController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/registro_usuarios', 'RegistroUsuariosController@index')->name('registro_usuarios');
+Route::match(['get', 'post'], '/roles', 'RolesController@index')->name('roles');
+Route::match(['get', 'post'], '/rolStore', 'RolesController@store')->name('rolStore');
+Route::get('/lista_usuarios', 'ListaUsuariosController@index')->name('lista_usuarios');
+Route::get('/permisos', 'PermisosController@index')->name('permisos');
