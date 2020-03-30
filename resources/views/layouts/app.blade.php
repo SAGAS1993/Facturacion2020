@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{csrf_token()}}">
   <title>AdminLTE 3 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,5 +86,6 @@
 <script src="/dist/js/demo.js"></script>
 <!-- Procesos con ajjax -->
 <script src="/js/funciones_ajax.js"></script>
+<script src="/js/config_ajax.js"></script>
 </body>
 </html>

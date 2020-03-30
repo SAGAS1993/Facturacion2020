@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Roles;
+use App\Models\Roles;
 
 class RolesController extends Controller
 {
@@ -15,7 +15,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        return view('roles');
+        $a = Roles::all();
+        return view('roles', compact('a'));
     }
 
     /**
@@ -36,12 +37,14 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-      Roles::create($request->all());
-        if ($request->ajax()) {
-          return response()->json([
+        $rol = new Roles();
+
+        $rol->Nombre = $request->nombre;
+
+        $rol->save();
+        return response()->json([
             "mensaje" => "Rol creado correctamente"
           ]);
-        }
     }
 
     /**
