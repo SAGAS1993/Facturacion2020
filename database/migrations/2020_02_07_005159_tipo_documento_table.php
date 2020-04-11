@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DepartamentoTable extends Migration
+class TipoDocumentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class DepartamentoTable extends Migration
      */
     public function up()
     {
-        Schema::create('departamento', function (Blueprint $table) {
-            $table->bigIncrements('Id_Depar');
-            $table->unsignedBigInteger('Id_Pais');
+        Schema::create('tipo_documento', function (Blueprint $table) {
+            $table->bigIncrements('Id_Tp_Doc');
             $table->text('Nombre');
             $table->timestamps();
-
-            $table->foreign('Id_Pais')->references('Id_Pais')->on('pais');
         });
     }
 
@@ -30,6 +27,8 @@ class DepartamentoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departamento');
+            DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('tipo_documento');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

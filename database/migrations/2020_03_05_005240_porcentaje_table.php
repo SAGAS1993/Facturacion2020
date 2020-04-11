@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TipoDocumentoTable extends Migration
+class PorcentajeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class TipoDocumentoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_documento', function (Blueprint $table) {
-            $table->bigIncrements('Id_Tp_Doc');
+        Schema::create('porcentaje', function (Blueprint $table) {
+            $table->bigIncrements('Id_Porc');
             $table->text('Nombre');
+            $table->text('Descripcion');
+            $table->integer('Porcentaje');
             $table->timestamps();
         });
     }
@@ -27,6 +29,8 @@ class TipoDocumentoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_documento');
+           DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('porcentaje');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

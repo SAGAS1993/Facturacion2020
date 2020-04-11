@@ -15,8 +15,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $a = Roles::all();
-        return view('roles', compact('a'));
+        $rol = Roles::all();
+        return view('roles', compact('rol'));
     }
 
     /**
@@ -37,14 +37,17 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
+         $request()->validate([
+            'nom_rol' => 'required'
+        ]);
         $rol = new Roles();
-
         $rol->Nombre = $request->nombre;
-
         $rol->save();
         return response()->json([
             "mensaje" => "Rol creado correctamente"
           ]);
+
+
     }
 
     /**

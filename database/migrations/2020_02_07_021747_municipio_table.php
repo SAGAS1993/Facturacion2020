@@ -29,7 +29,8 @@ class MunicipioTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('municipio');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

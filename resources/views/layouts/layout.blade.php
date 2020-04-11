@@ -304,7 +304,7 @@
           <!-- ./col -->
         </div>
         <!-- /.row -->
-      
+
       </div><!-- /.container-fluid -->
       <div class="row">
           @yield("contenedor")

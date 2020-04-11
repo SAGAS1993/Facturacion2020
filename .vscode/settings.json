@@ -1,6 +1,0 @@
-{
-    "prettier.requireConfig": true,
-    "prettier.resolveGlobalModules": true,
-    "prettier.useTabs": true,
-    "prettier.vueIndentScriptAndStyle": true
-}
