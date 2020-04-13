@@ -3,7 +3,7 @@
 $('#roles').click(function(e) {
   e.preventDefault();
   var nombre = $("#nom_rol").val();
-  const url = 'rolStore';
+  const url = 'roles';
   const params = {'nombre':nombre};
   proccessFunction(url, 'POST', params, callbackStoreRoles);
 });
@@ -15,7 +15,10 @@ function callbackStoreRoles(status, response){
     return false;
   };
       toastr.success(response.mensaje);
+
 }
+
+
 //listar rol
 
 

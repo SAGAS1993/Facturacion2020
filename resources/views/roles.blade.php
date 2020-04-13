@@ -27,7 +27,7 @@ active
 
 
 
- <div class="modal fade" id="modal-default">
+ <div class="modal fade" id="modal-default" >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -38,16 +38,28 @@ active
             </div>
 
             <div class="modal-body">
-               {{ $errors }}
-          <form id="frm_roles" action="" method="post">
-          <input type="text" name="nom_rol" id="nom_rol" class="form-control" placeholder="Nombre del rol" required>
-          </form>
+
+          <form method="POST" id="frm_roles" action="{{ url('roles') }}" >
+             @csrf
+            @if ($errors->any())
+
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+          <input type="text" name="nom_rol" id="nom_rol" class="form-control" placeholder="Nombre del rol" required value="{{ old('nom_rol')}}" >
+
             </div>
 
             <div class="modal-footer ">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               <button type="button"  id="roles" type="submit" class="btn btn-primary">Crear Rol </button>
-
+              <input type="submit" id="roles" class="btn btn-primary" value="Registrar Rol">
+              </form>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -107,4 +119,5 @@ active
           </div>
           </div>
           <!-- /.card -->
+
 @endsection

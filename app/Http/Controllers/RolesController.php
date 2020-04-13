@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Http\Response;
 use App\Models\Roles;
+use App\Http\Requests\RolRequest;
 
 class RolesController extends Controller
 {
@@ -37,15 +39,16 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-         $request()->validate([
-            'nom_rol' => 'required'
-        ]);
-        $rol = new Roles();
-        $rol->Nombre = $request->nombre;
-        $rol->save();
-        return response()->json([
-            "mensaje" => "Rol creado correctamente"
-          ]);
+     $rol = new Roles();
+     $rol->Nombre = $request->nombre;
+    $rol->save();
+    return response()->json([
+    "mensaje" => "Rol creado correctamente"
+       ]);
+
+
+
+
 
 
     }
