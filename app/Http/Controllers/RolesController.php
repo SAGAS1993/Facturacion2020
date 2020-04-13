@@ -37,14 +37,18 @@ class RolesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RolRequest $request)
     {
+    if ($request->ajax()) {
      $rol = new Roles();
      $rol->Nombre = $request->nombre;
     $rol->save();
     return response()->json([
     "mensaje" => "Rol creado correctamente"
        ]);
+         }
+
+
 
 
 

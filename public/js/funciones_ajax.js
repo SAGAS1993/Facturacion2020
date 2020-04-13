@@ -10,12 +10,10 @@ $('#roles').click(function(e) {
 
 function callbackStoreRoles(status, response){
   if (status != 200){
-    console.log(status);
-    alert(response);
+toastr.error(response.responseJSON.errors.nombre);
     return false;
   };
-      toastr.success(response.mensaje);
-
+  toastr.success(response.mensaje);
 }
 
 

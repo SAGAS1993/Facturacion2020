@@ -12,7 +12,7 @@ function proccessFunction(url, method, params, callback){
     success: function(res){
       callback(200, res);
     },
-    error: function(error) {      
+    error: function(error) {
       callback(500, error);
     }
   });
