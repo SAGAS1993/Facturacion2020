@@ -15,10 +15,7 @@ toastr.error(response.responseJSON.errors.nombre);
   };
   toastr.success(response.mensaje);
 }
-
-
 //listar rol
-
 
 //iniciacion de tabls de roles
   $(function () {
