@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Roles;
 use App\Http\Requests\RolRequest;
+use Illuminate\Support\Facades\DB;
 
 class RolesController extends Controller
 {
@@ -15,10 +16,20 @@ class RolesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function listing(){
+ $rol = Roles::all();
+        return response()->json(
+            $rol->toArray()
+        );
+
+    }
+
     public function index()
     {
-        $rol = Roles::all();
-        return view('roles', compact('rol'));
+
+        return view('roles');
+
     }
 
     /**

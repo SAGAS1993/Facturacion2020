@@ -16,12 +16,22 @@ toastr.error(response.responseJSON.errors.nombre);
   toastr.success(response.mensaje);
 }
 //listar rol
+$(document).ready(function(){
+  var tablaDatos = $("#datos");
+  var route = "/rolesr";
 
+  $("#datos").empty();
+  $.get(route, function(res){
+    $(res).each(function(key,value){
+      tablaDatos.append("<tr>"+"<td>"+value.Id_Rol+"</td>" +"<td>"+value.Nombre+"</td>"+"<td>"+value.updated_at+"</td>"+"</tr>");
+    });
+  });
+});
 //iniciacion de tabls de roles
   $(function () {
      $("#tabla-roles").DataTable({
       "responsive": true,
-      "autoWidth": false,
+      "autoWidth": true,
     });
 
   });

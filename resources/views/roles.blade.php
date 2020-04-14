@@ -101,8 +101,8 @@ active
                   <th>Acciones</th>
                 </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody id="datos">
+               {{--    <tr>
                   @foreach ($rol as $roles)
                   <td>{{$roles->Id_Rol}}</td>
                   <td>{{$roles->Nombre}}</td>
@@ -111,7 +111,7 @@ active
                     <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></a>
                    </td>
                   </tr>
-        @endforeach
+        @endforeach --}}
       </tbody>
               </table>
             </div>
