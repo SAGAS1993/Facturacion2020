@@ -18,18 +18,13 @@ class RolesController extends Controller
      */
 
     public function listing(){
- $rol = Roles::all();
-        return response()->json(
-            $rol->toArray()
-        );
-
+        $rol = Roles::all();
+        return view('list',compact('rol'));
     }
 
     public function index()
     {
-
         return view('roles');
-
     }
 
     /**

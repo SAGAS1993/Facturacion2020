@@ -25,4 +25,4 @@ Route::get('/roles', 'RolesController@index')->name('roles');
 Route::get('/lista_usuarios', 'ListaUsuariosController@index')->name('lista_usuarios');
 Route::get('/permisos', 'PermisosController@index')->name('permisos');
 Route::post('/roles', 'RolesController@store')->name('roles');
-Route::get('/rolesr', 'RolesController@listing')->name('rolesr');
+Route::get('roleslist', 'RolesController@listing');
