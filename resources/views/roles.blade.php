@@ -86,6 +86,29 @@ active
         </button>
       </div>
 
+<<<<<<< HEAD
+<div class="content">
+<div id="list-roles">
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
       @csrf
       <form method="POST" id="frm_roles" name="frm_roles" action="{{ url('roles_eliminar') }}" >
         <div class="modal-body">
@@ -105,5 +128,6 @@ active
 <div id="list-roles">
 
 </div>
+>>>>>>> 925cbf263be937d34bae668f0b7e5082a5ed73eb
 
 @endsection
