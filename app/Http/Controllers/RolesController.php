@@ -45,22 +45,14 @@ class RolesController extends Controller
      */
     public function store(RolRequest $request)
     {
-    if ($request->ajax()) {
-     $rol = new Roles();
-     $rol->Nombre = $request->nombre;
-    $rol->save();
-    return response()->json([
-    "mensaje" => "Rol creado correctamente"
-       ]);
-         }
-
-
-
-
-
-
-
-
+      if ($request->ajax()) {
+        $rol = new Roles();
+        $rol->Nombre = $request->nombre;
+        $rol->save();
+        return response()->json([
+        "mensaje" => "Rol creado correctamente"
+         ]);
+      }
     }
 
     /**
@@ -82,7 +74,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -92,9 +84,18 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RolRequest $request)
     {
-        //
+      if ($request->ajax()) {
+        
+        $rol = Roles::Find($request->id_rol);        
+        $rol->Nombre = $request->nombre;
+        $rol->save();
+
+        return response()->json([
+        "mensaje" => "Rol editado correctamente."
+         ]);
+      }
     }
 
     /**
@@ -103,8 +104,14 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $id)
     {
-        //
+        $rol = Roles::Find($id->id_rol);
+        $rol->delete();
+
+        return response()->json([
+        "mensaje" => "Rol eliminado correctamente."
+         ]);
     }
+
 }
