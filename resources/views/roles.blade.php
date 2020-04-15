@@ -101,6 +101,7 @@ active
   </div>
 </div>
 
+<!-- Listar roles desde js -->
 <div id="list-roles">
 
 </div>
