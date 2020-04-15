@@ -25,4 +25,6 @@ Route::get('/roles', 'RolesController@index')->name('roles');
 Route::get('/lista_usuarios', 'ListaUsuariosController@index')->name('lista_usuarios');
 Route::get('/permisos', 'PermisosController@index')->name('permisos');
 Route::post('/roles', 'RolesController@store')->name('roles');
+Route::post('/roles_editar', 'RolesController@update')->name('roles_editar');
+Route::post('/roles_eliminar', 'RolesController@destroy')->name('roles_eliminar');
 Route::get('roleslist', 'RolesController@listing');
