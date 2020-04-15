@@ -10,6 +10,7 @@
               </button>
              <!--fin modal de boton registar rol-->
             </div>
+
             <!-- /.card-header -->
             <div class="card-body">
               <table id="tabla-roles" class="table table-bordered table-striped">

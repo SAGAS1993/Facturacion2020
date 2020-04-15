@@ -8,22 +8,22 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-     
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               
+
           <li class="nav-item">
             <a href="home" class="nav-link @yield('active1')">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Inicio
               </p>
-            </a>            
-          </li> 
+            </a>
+          </li>
 
           <li class="nav-item has-treeview @yield('menu-open')">
             <a href="#" class="nav-link @yield('active2') @yield('active3') @yield('active4') @yield('active5')">

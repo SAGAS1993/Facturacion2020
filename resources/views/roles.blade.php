@@ -58,11 +58,11 @@ active
       </div>
 
 
-
+<div class="content">
 <div id="list-roles">
 
 </div>
-
+</div>
 
 
 
